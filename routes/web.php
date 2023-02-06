@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/documentos', [App\Http\Controllers\HomeController::class, 'doc'])->name('documentos');
+
+
+Route::get('/arquivo', function(){
+    return view('arquivo');
+});
